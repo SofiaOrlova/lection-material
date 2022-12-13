@@ -1,6 +1,8 @@
 ﻿@use 'theme/colors';
 @use 'theme/typography';
 
+$menuBreakpoint: 839px;
+
 .mat-sidenav-container {
   flex-grow: 1;
   background-color: inherit;
@@ -13,12 +15,32 @@
   border: none;
   background-color: colors.surface();
   color: colors.on-surface-variant();
+  @media (max-width: $menuBreakpoint){
+    width: 80px;
+  }
+}
+
+.mat-icon{
+  @media (max-width: $menuBreakpoint){
+    margin-bottom: 4px;
+  }
+}
+
+.mdc-list-item{
+  @media (max-width: $menuBreakpoint){
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .mat-mdc-list-item {
   height: 56px !important;
   padding-inline: 16px 24px !important;
   border-radius: 28px;
+
+  @media (max-width: $menuBreakpoint){
+    padding-inline: 16px !important;
+  }
 
   .mat-mdc-list-item-unscoped-content {
     @include typography.label-large;
@@ -27,6 +49,12 @@
     gap: 12px;
     align-items: center;
     color: inherit;
+    @media (max-width: $menuBreakpoint){
+      /*@include typography.label-medium;
+      display: flex;
+      flex-direction: column;
+      gap: 0px;*/
+    }
   }
 
   &.mat-mdc-list-item-active {

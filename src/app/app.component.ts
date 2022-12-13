@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'test-project-2';
 
   public isSidenavOpened: boolean = true;
+  public isMenuOpen: boolean = false;
 
   constructor(
     private matIconRegistry: MatIconRegistry
@@ -22,5 +23,9 @@ export class AppComponent implements OnInit {
 
   public toggleSidenav() {
     this.isSidenavOpened = !this.isSidenavOpened;
+  }
+
+  public toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

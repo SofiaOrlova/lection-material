@@ -1,26 +1,31 @@
 <mat-sidenav-container>
   <mat-sidenav mode="side" [opened]="isSidenavOpened">
     <mat-nav-list>
-      <a mat-list-item routerLink="page-1" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
-        <mat-icon>home</mat-icon>
-        Моя страница
+      <a mat-list-item class="burger"  (click)="toggleMenu()">
+        <mat-icon>{{isMenuOpen ? "close" : "menu"}}</mat-icon> 
       </a>
-      <a mat-list-item routerLink="page-2" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
-        <mat-icon>mode_comment</mat-icon>
-        Сообщения
-      </a>
-      <a mat-list-item routerLink="page-3" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
-        <mat-icon>mode_comment</mat-icon>
-        Сообщения
-      </a>
-      <a mat-list-item routerLink="page-4" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
-        <mat-icon>mode_comment</mat-icon>
-        Сообщения
-      </a>
-      <a mat-list-item routerLink="page-5" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
-        <mat-icon>mode_comment</mat-icon>
-        Сообщения
-      </a>
+      <div class="menu" [class.is-open]="isMenuOpen">
+        <a mat-list-item routerLink="page-1" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>home</mat-icon>
+          <div class="for-large-screen">Моя страница</div>
+        </a>
+        <a mat-list-item routerLink="page-2" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>mode_comment</mat-icon>
+          <div class="for-large-screen">Сообщения</div>
+        </a>
+        <a mat-list-item routerLink="page-3" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>people</mat-icon>
+          <div class="for-large-screen">Друзья</div>
+        </a>
+        <a mat-list-item routerLink="page-4" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>image</mat-icon>
+          <div class="for-large-screen">Фотографии</div>
+        </a>
+        <a mat-list-item routerLink="page-5" routerLinkActive="mat-mdc-list-item-active" [routerLinkActiveOptions]="{exact: true}">
+          <mat-icon>headphones</mat-icon>
+          <div class="for-large-screen">Музыка</div>
+        </a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -1,4 +1,37 @@
+$menuBreakpoint: 839px;
+
 :host {
   flex-grow: 1;
   display: flex;
 }
+
+.burger{
+  display: none;
+  @media (max-width: $menuBreakpoint){
+    display: block;
+  }
+}
+.menu{
+  @media (max-width: $menuBreakpoint){
+    .for-large-screen{
+      display: none;
+    }
+    &.is-open{
+      .for-large-screen{
+        display: block;
+      }
+      a{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+    }
+  }
+
+}
+
+/*.for-large-screen{
+  @media (max-width: $menuBreakpoint){
+    display: none;
+  }
+}*/
