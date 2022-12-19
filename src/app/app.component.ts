@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MatIconRegistry} from "@angular/material/icon";
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,12 @@ export class AppComponent implements OnInit {
 
   public isSidenavOpened: boolean = true;
   public isMenuOpen: boolean = false;
+  
 
   constructor(
+    public authService: AuthService,
     private matIconRegistry: MatIconRegistry
+    
   ) {
   }
 

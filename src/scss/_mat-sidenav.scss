@@ -50,10 +50,10 @@ $menuBreakpoint: 839px;
     align-items: center;
     color: inherit;
     @media (max-width: $menuBreakpoint){
-      /*@include typography.label-medium;
       display: flex;
       flex-direction: column;
-      gap: 0px;*/
+      gap: 0;
+      font-size: 10px;
     }
   }
 
@@ -70,4 +70,14 @@ $menuBreakpoint: 839px;
   &.mat-mdc-list-item-interactive:not(:focus):not(.mdc-list-item--disabled):hover::before {
     opacity: .08;
   }
+}
+
+@media(prefers-color-scheme: dark) {
+  .mat-mdc-button[disabled][disabled] {
+    --mdc-text-button-disabled-label-text-color: #c7beaa;
+    --mdc-text-button-label-text-color: #c7beaa;
+  }
+  .mat-mdc-button.mat-unthemed {
+    --mdc-text-button-label-text-color: #c7beaa;
+}
 }
